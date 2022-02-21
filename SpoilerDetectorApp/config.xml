@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<it.unipi.dii.inginf.lsdb.spoilerdetectorapp.config.ConfigParams>
+    <mongoDBPrimaryIP>172.16.4.75</mongoDBPrimaryIP>
+    <mongoDBPrimaryPort>27017</mongoDBPrimaryPort>
+    <mongoDBUsername>root</mongoDBUsername>
+    <mongoDBPassword></mongoDBPassword>
+    <mongoDBName>spoilerDetector</mongoDBName>
+    <limitNumber>10</limitNumber>
+</it.unipi.dii.inginf.lsdb.spoilerdetectorapp.config.ConfigParams>
