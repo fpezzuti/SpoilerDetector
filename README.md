@@ -52,3 +52,5 @@ The deployed model has the following performances:
 Here is an overview of how a review containing a spoiler is shown to the user; by clicking on button `Spoiler content`, the textual content of the review will be displayed to the user.
 
 ![Spoiler alert and spoiler revealed](https://github.com/fpezzuti/SpoilerDetector/assets/75533556/17e1438b-49bb-4d44-844c-0a6dbb226bbe)
+
+The code of the Java application of _SpoilerDetector_ is available [here](./SpoilerDetectorApp)
