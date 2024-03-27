@@ -54,3 +54,8 @@ Here is an overview of how a review containing a spoiler is shown to the user; b
 ![Spoiler alert and spoiler revealed](https://github.com/fpezzuti/SpoilerDetector/assets/75533556/17e1438b-49bb-4d44-844c-0a6dbb226bbe)
 
 The code of the Java application of _SpoilerDetector_ is available [here](./SpoilerDetectorApp)
+
+## Flask server
+To run the application, a **Flask server** must be running. The code needed to deploy the Flask server is available [here](./FlaskServer/).
+
+The Flask server receives movie reviews, cleans the text using the `text_clean.py` Python script, and returns the result of the classification performed using the deployed binary classifier.  
