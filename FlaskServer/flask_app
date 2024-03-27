@@ -1,0 +1,40 @@
+from distutils.log import debug
+import re
+import sys
+import traceback
+from flask import Flask, request, jsonify
+import pandas as pd
+import numpy as np
+import joblib
+from text_clean import text_clean
+
+app = Flask(__name__)
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    if lr:
+        try:
+            json_ = request.json
+            print(request)
+            print(json_)
+            query = pd.DataFrame.from_dict(json_, orient="index", columns=['review_text'])
+            query['review_text'] = query['review_text'].apply(lambda x: text_clean(x))
+
+            prediction = lr.predict(query['review_text'])
+
+            return jsonify({'prediction': str(prediction[0])})
+        except:
+            return jsonify({'trace': traceback.format_exc()})
+    else:
+        print('Train the model first')
+        return ('No model here to use')
+
+if __name__ == '__main__':
+    try:
+        port = int(sys.argv[1]) # This is for a command-line argument
+    except:
+        port = 12345 # If you don't provide any port then the port will be set to 12345
+    lr = joblib.load("./SpoilerDetector.pkl") # Load "model.pkl"
+    print ('Model loaded')
+    app.run(port=port)
